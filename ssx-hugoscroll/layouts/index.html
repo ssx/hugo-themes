@@ -1,0 +1,20 @@
+{{ partial "header.html" . }}
+<body class="home-template">
+
+    <main class="content" role="main">
+    <div class='fixed-nav'>
+    </div>
+        {{ range .Data.Pages.ByWeight }}
+                {{ if eq .Type  "post" }}
+                    {{ .Render "post"}}
+                {{ end }}
+        {{ end }}
+
+</main>
+    {{ partial "footer.html" .}}
+
+    {{ partial "script.html" .}}
+
+
+</body>
+</html>
